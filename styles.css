@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url(./Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+header {
+   /*  text-align: center; (propriedade não funciona em div, porque não é considerada um elemento de texto */
+    padding-top: 32px;
+    height: calc(120px + 32px);
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg,#9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: auto; /* os comandos margin-top e margin-bottom podem ser substituídos por margin: 32px auto; --> o primeiro valor ajustará a parte de cima e de baixo, enquanto o segundo valor será mantido para os lados */
+
+    display: grid;
+    gap: 24px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+       
+      /* display: flex;
+       flex-direction: column;
+       gap: 24px;
+       
+       (possibilidades de section uma abaixo da outra)
+       */
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg,#9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+
+   /*  border-top: 4px solid red */
+
+}
+
+section h2 {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.47px;
+
+}
+
+section p {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.18px;
+    color: #A1A1AA
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    /* a função display tem a ver com a visualização do elemento
+        ex: display: none; desaparece com a visualização das caixas/elementos
+        exitem 2 tipos de visualização: 
+        caixa abaixo de caixa (block - bloqueia a linha e mantém para aquele elemento, mandando o próximo elemento para baixo - tag <li> do HTML)
+        caixa lado a lado (in line - tag <a> do HTML)
+    */
+  
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid #443E54;
+}
+
+
+/* animation
+    1o passo: definir o nome da animação com @keyframes e o começo e fim dela
+    2o passo: definir as propriedade da animação: nome e duração. Pode haver o atraso da animação (delay). Ao aplicar o delay, é importante puxar as propriedades com backwards para criar um efeito legal
+    */
+
+header div {
+    animation: fromTop .7s .4s backwards;
+   /* .4s pode ser escrito como animation-delay separadamente ou adicionado à propriedade animation */
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .8s;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    animação dos cartões aparecendo da esquerda para a direita
+} */
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
